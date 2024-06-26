@@ -35,6 +35,7 @@ jobs:
           -scheme ShareFile \
           -sdk iphoneos \
           -destination "id=${{ env.DEVICE_UDID }}" \
+          -allowProvisioningUpdates \
           build
 
     - name: Run UITests
@@ -44,4 +45,5 @@ jobs:
           -scheme ShareFileUITests \
           -sdk iphoneos \
           -destination "id=${{ env.DEVICE_UDID }}" \
+          -allowProvisioningUpdates \
           test
