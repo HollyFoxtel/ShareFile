@@ -1,0 +1,52 @@
+name: Run iOS UITests
+
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: 'Select the device to run the UITests on'
+        required: true
+        default: 'Hollys iPhone'
+        options:
+          - 'Hollys iPhone'
+          - 'Bedroom Apple TV'
+
+jobs:
+  uitest:
+    runs-on: [self-hosted-holly, macOS]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v2
+      with:
+        xcode-version: 'latest'
+
+    - name: Select Device UDID
+      id: select-udid
+      run: |
+        if [ "${{ github.event.inputs.device }}" == "Hollys iPhone" ]; then
+          echo "DEVICE_UDID=${{ secrets.DEVICE_UDID_IPHONE }}" >> $GITHUB_ENV
+        elif [ "${{ github.event.inputs.device }}" == "Bedroom Apple TV" ]; then
+          echo "DEVICE_UDID=${{ secrets.DEVICE_UDID_APPLETV }}" >> $GITHUB_ENV
+        fi
+
+    - name: Build the app
+      run: |
+        xcodebuild \
+          -project ShareFile.xcodeproj \
+          -scheme ShareFile \
+          -sdk iphoneos \
+          -destination "id=${{ env.DEVICE_UDID }}" \
+          build
+
+    - name: Run UITests
+      run: |
+        xcodebuild \
+          -project ShareFile.xcodeproj \
+          -scheme ShareFileUITests \
+          -sdk iphoneos \
+          -destination "id=${{ env.DEVICE_UDID }}" \
+          test

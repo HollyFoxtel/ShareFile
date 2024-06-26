@@ -1,0 +1,96 @@
+{
+    "offer": {
+        "code": "O-BINGEITUNES-OFFER",
+        "ctaHeader": "START YOUR FREE TRIAL(Holly)",
+        "ctaSubtext": "New Customers Only",
+        "packageHeader": "No lock-in contract(Mock)",
+        "packageSubtext": "Includes 7 day free trial for new customers",
+        "packageHeaderTvVersion": "No lock-in contract (Mock)",
+        "packageSubtextTvVersion": "Includes 7 day free trial for new customers",
+        "customOfferSummary": "Now streaming the world’s best shows",
+        "voucherRequired": false,
+        "paymentText": null,
+        "legalDisclaimer": {
+            "message": "By clicking \"Start Subscription Now\" you agree to the Hubbl ${TermsAndConditions}, ${PrivacyPolicy} and ${DataCollectionStatement}. By subscribing you also confirm that you are over 18 years of age.",
+            "ctaText": "Start Subscription Now",
+            "replacements": {
+                "TermsAndConditions": {
+                    "type": "link",
+                    "display": "Terms and Conditions",
+                    "value": "https://help.binge.com.au/s/terms-and-conditions",
+                    "withUserId": null,
+                    "textVersion": "https://resources.streamotion.com.au/production/common/user-signup/hubbl-streaming-and-account-customer-terms.txt"
+                },
+                "PrivacyPolicy": {
+                    "type": "link",
+                    "display": "Privacy Policy",
+                    "value": "https://help.binge.com.au/s/privacy-policy",
+                    "withUserId": null,
+                    "textVersion": "https://resources.streamotion.com.au/production/common/user-signup/foxtel-group-privacy-policy.txt"
+                },
+                "DataCollectionStatement": {
+                    "type": "link",
+                    "display": "Data Collection Statement",
+                    "value": "https://help.binge.com.au/s/data-collection",
+                    "withUserId": null,
+                    "textVersion": "https://resources.streamotion.com.au/production/common/user-signup/foxtel-group-privacy-notice.txt"
+                }
+            }
+        },
+        "nextBestOffer": "BGE_7DFT",
+        "journeys": [],
+        "forceLoginOverCreate": false,
+        "eventId": null,
+        "promoInfo": null
+    },
+    "voucher": null,
+    "packages": [
+        {
+            "product": "ares",
+            "planName": "Standard",
+            "packageId": "2c92a00c71bb46840171c798ac211019",
+            "displayName": "Standard",
+            "displayTag": "0-days free for new customers (Holly)",
+            "displayDescription": {
+                "message": "Subscriptions renew automatically every month, charged to your chosen payment option. \\nCancel any time, effective at the end of your billing period. \\nMake sure you cancel at least 24hrs before your next bill due date or trial end date. \\nManage your subscription by going to My Account after purchase. \\nFree trial for new customers only",
+                "ctaText": null,
+                "replacements": null
+            },
+            "features": [
+                {
+                    "title": "No. of Screens",
+                    "value": "2",
+                    "a11yTitle": null,
+                    "a11yValue": null
+                },
+                {
+                    "title": "Stream Quality",
+                    "value": "Up to 4K",
+                    "a11yTitle": null,
+                    "a11yValue": null
+                }
+            ],
+            "prices": [
+                {
+                    "priceId": "2c92a00c71bb46840171c798ac211019",
+                    "termType": "month",
+                    "displayAmount": 1,
+                    "displayRegularAmount": 1,
+                    "firstInvoiceAmount": 1,
+                    "firstInvoiceDate": "2024-06-06T14:00:00Z"
+                }
+            ],
+            "voucherApplied": false,
+            "serviceActivationDate": "2024-06-06T14:00:00Z",
+            "paymentMethodRequired": true,
+            "paymentMethodsAvailable": [
+                "ITUNES"
+            ],
+            "canApplyGiftCard": false,
+            "journeys": null
+        }
+    ],
+    "disableSignup": false,
+    "disableSignupText": null,
+    "error": null
+}
