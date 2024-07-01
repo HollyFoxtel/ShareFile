@@ -8,6 +8,7 @@
 import XCTest
 
 final class ShareFileUITests: XCTestCase {
+    let appGroupName = "group.tw.holly"
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,13 +25,43 @@ final class ShareFileUITests: XCTestCase {
 
     func testExample() throws {
         // UI tests must launch the application that they test.
-//        copyTestJson()
+//        copyTestsToSharedFolder()
+//        writeTestDataToGroupUserDefaults()
+        // copyTestDataAppGroup() // NOTE: Not working
+
         let app = XCUIApplication()
         app.launch()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func copyTestJson() {
+    func testLaunchPerformance() throws {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+            // This measures how long it takes to launch your application.
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
+                XCUIApplication().launch()
+            }
+        }
+    }
+}
+
+// MARK: - IPC
+private extension ShareFileUITests {
+    func writeTestDataToGroupUserDefaults() {
+        if let userDefaults = UserDefaults(suiteName: appGroupName) {
+            if let data = userDefaults.string(forKey: "sharedKey") {
+                print("Received data: \(data)")
+            }
+        }
+    }
+
+    func copyTestDataAppGroup() {
+        guard let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupName) else {
+             XCTFail("Failed to get URL for app group \(appGroupName). Check your entitlements.")
+            fatalError()
+         }
+    }
+
+    func copyTestsToSharedFolder() {
         guard let bundlePath = Bundle(for: Self.self).path(forResource: "api_billing_holly", ofType: "json") else {
             return
         }
@@ -49,25 +80,29 @@ final class ShareFileUITests: XCTestCase {
     }
 
     private func sharedFolderURL() -> URL? {
-        if let simulatorSharedDir = ProcessInfo().environment["SIMULATOR_SHARED_RESOURCES_DIRECTORY"] {
-            // running on the simulator. We'll write to ~/Library/Caches
-            let simulatorHomeDirURL = URL(fileURLWithPath: simulatorSharedDir)
-            let cachesDirURL = simulatorHomeDirURL.appendingPathComponent("Library/Caches")
-            XCTAssertTrue(FileManager.default.isWritableFile(atPath: cachesDirURL.path), "Cannot write to simulator Caches directory")
-            let sharedFolderURL = cachesDirURL.appendingPathComponent("Secrets")
-            XCTAssertNoThrow( try FileManager.default.createDirectory(at: sharedFolderURL, withIntermediateDirectories: true, attributes: nil), "Failed to create shared folder \(sharedFolderURL.lastPathComponent) in simulator Caches directory at \(cachesDirURL)")
-            return sharedFolderURL
+        guard let simulatorSharedDir = ProcessInfo().environment["SIMULATOR_SHARED_RESOURCES_DIRECTORY"] else {
+            return nil
         }
 
-        return nil
-    }
+        let simulatorHomeDirURL = URL(fileURLWithPath: simulatorSharedDir)
+        let cachesDirURL = simulatorHomeDirURL.appendingPathComponent("Library/Caches")
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+        guard FileManager.default.isWritableFile(atPath: cachesDirURL.path) else {
+            return nil
+        }
+
+        let sharedFolderURL = cachesDirURL.appendingPathComponent("TestData")
+        do {
+            try FileManager.default.createDirectory(
+                at: sharedFolderURL,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+
+            return sharedFolderURL
+        } catch {
+            print("Failed to create shared folder \(sharedFolderURL.lastPathComponent) in simulator Caches directory at \(cachesDirURL)")
+            return nil
         }
     }
 }
