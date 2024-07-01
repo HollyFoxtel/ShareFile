@@ -1,10 +1,3 @@
-//
-//  ShareFileUITestsLaunchTests.swift
-//  ShareFileUITests
-//
-//  Created by Holly-Fox on 2024/6/25.
-//
-
 import XCTest
 
 final class ShareFileUITestsLaunchTests: XCTestCase {

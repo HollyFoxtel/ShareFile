@@ -41,6 +41,17 @@
                ReferencedContainer = "container:ShareFile.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F64071002C32756500596B40"
+               BuildableName = "ShareFileTests.xctest"
+               BlueprintName = "ShareFileTests"
+               ReferencedContainer = "container:ShareFile.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
