@@ -13,4 +13,12 @@ extension XCTestCase {
 
         wait(for: [expectation], timeout: seconds + 1)
     }
+
+    func waitForAsync(seconds: TimeInterval) async throws {
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
+    }
+}
+
+func waitFor(seconds: TimeInterval) async throws {
+    try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
 }
