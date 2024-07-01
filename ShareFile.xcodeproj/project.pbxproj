@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F62E5F8B2C328919002976A6 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E5F8A2C328919002976A6 /* ContentViewTests.swift */; };
 		F64071042C32756500596B40 /* TestOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64071032C32756500596B40 /* TestOrderTests.swift */; };
 		F6B64FB42C3278D000E23870 /* Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B64FB32C3278D000E23870 /* Wait.swift */; };
 		F6CEACB72C2AB776001CA598 /* ShareFileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CEACB62C2AB776001CA598 /* ShareFileApp.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F62E5F8A2C328919002976A6 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		F64071012C32756500596B40 /* ShareFileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareFileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64071032C32756500596B40 /* TestOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrderTests.swift; sourceTree = "<group>"; };
 		F6B64FB32C3278D000E23870 /* Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wait.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				F6CEACD42C2ABA45001CA598 /* Resources */,
 				F6CEACCA2C2AB7D3001CA598 /* ShareFileUITests.swift */,
+				F62E5F8A2C328919002976A6 /* ContentViewTests.swift */,
 				F6CEACCC2C2AB7D3001CA598 /* ShareFileUITestsLaunchTests.swift */,
 				F6CEACD32C2AB834001CA598 /* UITests.entitlements */,
 			);
@@ -312,6 +315,7 @@
 			files = (
 				F6CEACCD2C2AB7D3001CA598 /* ShareFileUITestsLaunchTests.swift in Sources */,
 				F6CEACCB2C2AB7D3001CA598 /* ShareFileUITests.swift in Sources */,
+				F62E5F8B2C328919002976A6 /* ContentViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
