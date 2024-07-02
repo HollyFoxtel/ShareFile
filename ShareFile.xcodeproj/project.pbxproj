@@ -17,6 +17,7 @@
 		F6CEACCB2C2AB7D3001CA598 /* ShareFileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CEACCA2C2AB7D3001CA598 /* ShareFileUITests.swift */; };
 		F6CEACCD2C2AB7D3001CA598 /* ShareFileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CEACCC2C2AB7D3001CA598 /* ShareFileUITestsLaunchTests.swift */; };
 		F6CEACD62C2ABA53001CA598 /* api_billing_holly.json in Resources */ = {isa = PBXBuildFile; fileRef = F6CEACD52C2ABA53001CA598 /* api_billing_holly.json */; };
+		F6D8EE012C33FE4A004A3C04 /* MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8EE002C33FE37004A3C04 /* MixTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		F6CEACD32C2AB834001CA598 /* UITests.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UITests.entitlements; sourceTree = "<group>"; };
 		F6CEACD52C2ABA53001CA598 /* api_billing_holly.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_billing_holly.json; sourceTree = "<group>"; };
 		F6CEACD72C2ABB94001CA598 /* ShareFile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareFile.entitlements; sourceTree = "<group>"; };
+		F6D8EE002C33FE37004A3C04 /* MixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		F64071022C32756500596B40 /* ShareFileTests */ = {
 			isa = PBXGroup;
 			children = (
+				F6D8EDFF2C33FE1E004A3C04 /* Migration */,
 				F6B64FB62C327B6C00E23870 /* Common */,
 				F6B64FB52C327B2300E23870 /* Parallel */,
 			);
@@ -162,6 +165,14 @@
 				F6CEACD52C2ABA53001CA598 /* api_billing_holly.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6D8EDFF2C33FE1E004A3C04 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				F6D8EE002C33FE37004A3C04 /* MixTests.swift */,
+			);
+			path = Migration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64071042C32756500596B40 /* TestOrderTests.swift in Sources */,
+				F6D8EE012C33FE4A004A3C04 /* MixTests.swift in Sources */,
 				F6B64FB42C3278D000E23870 /* Wait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

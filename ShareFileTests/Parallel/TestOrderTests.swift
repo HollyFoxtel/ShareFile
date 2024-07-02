@@ -26,7 +26,6 @@ final class TestOrderXCTests: XCTestCase {
         }
     }
 
-
     func testA_CookCupcake() throws {
         print("[TestOrder] CookCupcake start")
         waitFor(seconds: 1)
