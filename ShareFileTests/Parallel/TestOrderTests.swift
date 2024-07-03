@@ -60,7 +60,8 @@ struct TestOrderParallel {
 /// In Swift Testing, We can mark suite as `serialized` to run tests sequentially
 @Suite("Test Sequentially Run Tests", .serialized)
 struct TestOrderSequence {
-    @Test func testA_CookCupcake() async throws {
+    @Test("Make Cupcake")
+    func testA_CookCupcake() async throws {
         print("[TestOrder] CookCupcake start")
         try await waitFor(seconds: 1)
         print("[TestOrder] CookCupcake end")
