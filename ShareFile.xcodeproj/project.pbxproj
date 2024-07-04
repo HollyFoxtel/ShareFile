@@ -192,8 +192,8 @@
 				F696B7662C355AE100A0451B /* ArgumentsTests.swift */,
 				F6F4AF2E2C363F5C000F235B /* AsyncTests.swift */,
 				F6D8EE052C3469A7004A3C04 /* ControlTests.swift */,
-				F6F4AF2C2C3562C0000F235B /* SuiteTests.swift */,
 				F6FCE7202C355500009A967C /* TagTests.swift */,
+				F6F4AF2C2C3562C0000F235B /* SuiteTests.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";

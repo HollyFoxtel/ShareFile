@@ -49,7 +49,7 @@ class VideoQualityTests: XCTestCase {
 import Testing
 
 struct VideoQualityArgumentsTests {
-    @Test("Test Video Quality", arguments: [
+    @Test("Test Video Quality With Arugments", arguments: [
         TestData(quality: .sd, description: "Standard Definition"),
         TestData(quality: .hd, description: "High Definition"),
         TestData(quality: .uhd4k, description: "Ultra High Definition 4K"),

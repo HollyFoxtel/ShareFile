@@ -7,7 +7,8 @@ struct ControlTests {
     @Test(.disabled("This test always fail on one of CI, Fix later"))
     func testFailOnCI() { }
 
-    @Test func fetchVideoMetaDataFailed()  {
+    @Test("fetch video known issue failed and skip")
+    func fetchVideoMetaDataFailed()  {
         withKnownIssue(
             "A known issue caused, Cause this test random failed. Fix it later",
             isIntermittent: true
@@ -16,7 +17,8 @@ struct ControlTests {
         }
     }
 
-    @Test func fetchVideoMetaDataSuccess()  {
+    @Test("fetch video known issue success")
+    func fetchVideoMetaDataSuccess()  {
         withKnownIssue(
             "A known issue caused, Cause this test random failed. Fix it later",
             isIntermittent: true
