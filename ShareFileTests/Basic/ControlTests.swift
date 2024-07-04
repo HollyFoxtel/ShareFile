@@ -41,4 +41,3 @@ extension ControlTests {
 }
 
 #endif
-
