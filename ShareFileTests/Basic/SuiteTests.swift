@@ -13,10 +13,26 @@ struct VideoPlayViewModelNoSuiteTests {
     @Test func playVideo() {  }
 }
 
-@Suite("Video Play Success Tests")
-struct VideoPlayViewModelTests {
-    @Test func playVideoSuccessfully() {
+//@Suite("Video Play Rate", .serialized)
+@Suite("Video Play Rate")
+final class VideoPlayViewModelTests {
+    var playRate: Double
+    init() {
+        playRate = 0
+    }
 
+    deinit {
+        playRate = 1
+    }
+
+    @Test func playVideoRateSet_0_5() async {
+        print("playVideoRate1, rate is \(playRate)")
+        playRate = 0.5
+    }
+
+    @Test func playVideoRateRead() async {
+        try? await waitFor(seconds: 1)
+        print("playVideoRate2, rate is \(playRate)")
     }
 }
 
